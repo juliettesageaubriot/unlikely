@@ -573,74 +573,72 @@ var _jsxToDom = require("./jsxToDom");
         mutators.push((state)=>currentIndexIindicator.innerText = `${state.index} / ${state.maxImagesSlider}`);
         return currentIndexIindicator;
     };
-    let Slider1 = ()=>{
-        let currentIndex = state1.index;
+    let Slider1 = (index)=>{
+        let currentImage = state1.index;
+        // mutators.push((state) => (currentImage = state.index));
         let slider = /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
             class: `${(0, _stylesModuleScssDefault.default).slider}`,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 71,
+                lineNumber: 72,
                 columnNumber: 7
             },
             __self: this
         }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: currentIndex === 0 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            class: state1.index === 0 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1022741589/q%3D80_m%3D2000/v2?sig=b5ab12b405a872dc1b912fb6d0dede28050dbbd3302cfd92195f245ca813f26e",
             alt: "Ornans",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 72,
+                lineNumber: 73,
                 columnNumber: 9
             },
             __self: this
         }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: currentIndex === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            class: state1.index === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1019025604/q%3D80_m%3D2000/v2?sig=178bfbfb7ebfd5921fa6a7d6520c0aec6188620fa58469710b7505b6f4424247",
             alt: "Gerardmer",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 77,
+                lineNumber: 78,
                 columnNumber: 9
             },
             __self: this
         }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: currentIndex === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            class: state1.index === 2 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1031139731/q%3D80_m%3D2000/v2?sig=140071ee907596808aa6e0e1770784a56bb3084b53983cf4ff991072732792b9",
             alt: "Blue horse",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 82,
+                lineNumber: 83,
                 columnNumber: 9
             },
             __self: this
         }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: currentIndex === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            class: state1.index === 3 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1031139658/q%3D80_m%3D2000/v2?sig=d766424ee7bfbb85eb05743e111e76fcbbaf8be1f32a75eef864807d23f72c08",
             alt: "My brother's cat",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 87,
+                lineNumber: 88,
                 columnNumber: 9
             },
             __self: this
         }));
-        mutators.push((state)=>currentIndex = state.index);
-        console.log(currentIndex);
         return slider;
     };
-    console.log(state1);
     return /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
         class: "root",
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 103,
+            lineNumber: 99,
             columnNumber: 5
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider1, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 104,
+            lineNumber: 100,
             columnNumber: 7
         },
         __self: this
@@ -648,28 +646,28 @@ var _jsxToDom = require("./jsxToDom");
         class: (0, _stylesModuleScssDefault.default).buttons,
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 105,
+            lineNumber: 101,
             columnNumber: 7
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(PreviousButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 106,
+            lineNumber: 102,
             columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(CurrentIndexIndicator, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 107,
+            lineNumber: 103,
             columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(NextButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 108,
+            lineNumber: 104,
             columnNumber: 9
         },
         __self: this
@@ -678,7 +676,7 @@ var _jsxToDom = require("./jsxToDom");
 document.body.appendChild(/*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider, {
     __source: {
         fileName: "src/app.jsx",
-        lineNumber: 114,
+        lineNumber: 109,
         columnNumber: 27
     },
     __self: undefined
@@ -715,9 +713,9 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"ksQXS":[function(require,module,exports) {
-module.exports["buttons"] = `ZBpnFq_buttons`;
 module.exports["inactive"] = `ZBpnFq_inactive`;
 module.exports["slider"] = `ZBpnFq_slider`;
+module.exports["buttons"] = `ZBpnFq_buttons`;
 module.exports["root"] = `ZBpnFq_root`;
 module.exports["active"] = `ZBpnFq_active`;
 

@@ -21,5 +21,6 @@ export function jsxToDom(element, props, ...children) {
       child instanceof HTMLElement ? child : document.createTextNode(child)
     );
   }
+
   return el;
 }
