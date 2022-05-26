@@ -2887,44 +2887,46 @@ function jsxToDom(element, props, ...children) {
 }
 /* @jsxRuntime classic @jsx jsxToDom */ function Counter(props = {}) {
     //set state
-    let state = {
+    let state1 = {
         count: props.initialCount || 0
     };
-    // increment function
-    let incrementCounter = ()=>{
-        state.count += 1;
+    //when modify the DOM
+    let mutators = [];
+    //trigger any DOM mutation
+    let setState = (handler)=>{
+        state1 = handler(state1);
+        mutators.forEach((fn)=>fn(state1));
     };
-    // update button funtion
-    let updateButton = (button)=>{
-        button.innerText = state.count;
+    let incrementCounter = ()=>{
+        setState((state)=>({
+                ...state,
+                count: state.count + 1
+            }));
     };
     let Button = ()=>{
-        let updateCounter = (button)=>{
-            incrementCounter();
-            updateButton(button);
-        };
-        let button1 = /*#__PURE__*/ jsxToDom("button", {
-            onClick: ()=>updateCounter(button1),
+        let button = /*#__PURE__*/ jsxToDom("button", {
+            onClick: incrementCounter,
             __source: {
                 fileName: "src/app.js",
-                lineNumber: 53,
-                columnNumber: 7
+                lineNumber: 54,
+                columnNumber: 18
             },
             __self: this
-        }, state.count);
-        return button1;
+        }, state1.count);
+        mutators.push((state)=>button.innerText = state.count);
+        return button;
     };
     return /*#__PURE__*/ jsxToDom("div", {
         __source: {
             fileName: "src/app.js",
-            lineNumber: 59,
+            lineNumber: 61,
             columnNumber: 5
         },
         __self: this
     }, /*#__PURE__*/ jsxToDom(Button, {
         __source: {
             fileName: "src/app.js",
-            lineNumber: 60,
+            lineNumber: 62,
             columnNumber: 7
         },
         __self: this
@@ -2934,7 +2936,7 @@ _c = Counter;
 document.body.appendChild(/*#__PURE__*/ jsxToDom(Counter, {
     __source: {
         fileName: "src/app.js",
-        lineNumber: 65,
+        lineNumber: 67,
         columnNumber: 27
     },
     __self: undefined

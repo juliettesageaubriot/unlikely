@@ -34,24 +34,26 @@ function Counter(props = {}) {
     count: props.initialCount || 0,
   };
 
-  // increment function
-  let incrementCounter = () => {
-    state.count += 1;
+  //when modify the DOM
+  let mutators = [];
+
+  //trigger any DOM mutation
+  let setState = (handler) => {
+    state = handler(state);
+    mutators.forEach((fn) => fn(state));
   };
 
-  // update button funtion
-  let updateButton = (button) => {
-    button.innerText = state.count;
+  let incrementCounter = () => {
+    setState((state) => ({
+      ...state,
+      count: state.count + 1,
+    }));
   };
 
   let Button = () => {
-    let updateCounter = (button) => {
-      incrementCounter();
-      updateButton(button);
-    };
-    let button = (
-      <button onClick={() => updateCounter(button)}>{state.count}</button>
-    );
+    let button = <button onClick={incrementCounter}>{state.count}</button>;
+    mutators.push((state) => (button.innerText = state.count));
+
     return button;
   };
 
