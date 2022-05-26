@@ -1,3 +1,36 @@
-.app {
-  background: red;
+.root {
+  position: relative;
+  margin: 20px auto;
+  height: 100%;
+  width: 100%;
+  max-width: 780px;
+  min-height: 100vh;
+  .slider {
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 100%;
+      &.active {
+        opacity: 1;
+      }
+      &.inactive {
+        opacity: 0;
+      }
+    }
+  }
+
+  .buttons {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

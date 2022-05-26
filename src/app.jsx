@@ -1,12 +1,14 @@
 import styles from "./styles.module.scss";
 import { jsxToDom } from "./jsxToDom";
-
 /* @jsxRuntime classic @jsx jsxToDom */
 
 function Slider(props = {}) {
+  document.body.className = styles.root;
+
   //Set state object
   let state = {
     index: 0,
+    maxImagesSlider: 4,
   };
 
   //when modify the DOM
@@ -30,31 +32,81 @@ function Slider(props = {}) {
   let incrementIndex = () => {
     setState((state) => ({
       ...state,
-      index: state.index + 1,
+      index:
+        state.maxImagesSlider <= state.index
+          ? state.maxImagesSlider
+          : state.index + 1,
     }));
   };
 
   // Next button of the slider
   let NextButton = () => {
-    let button = <button onClick={incrementIndex}>{state.index}</button>;
-    mutators.push((state) => (button.innerText = state.index));
-
+    let button = <button onClick={incrementIndex}>Next</button>;
     return button;
   };
 
   // Previous button of the slider
   let PreviousButton = () => {
-    let previousButton = (
-      <button onClick={decrementIndex}>{state.index}</button>
-    );
-    mutators.push((state) => (previousButton.innerText = state.index));
+    let previousButton = <button onClick={decrementIndex}>Previous</button>;
     return previousButton;
   };
 
+  let CurrentIndexIndicator = () => {
+    let currentIndexIindicator = (
+      <span>
+        {state.index} / {state.maxImagesSlider}
+      </span>
+    );
+    mutators.push(
+      (state) =>
+        (currentIndexIindicator.innerText = `${state.index} / ${state.maxImagesSlider}`)
+    );
+    return currentIndexIindicator;
+  };
+
+  let Slider = () => {
+    let currentIndex = state.index;
+
+    let slider = (
+      <div class={`${styles.slider}`}>
+        <img
+          class={currentIndex === 0 ? styles.active : styles.inactive}
+          src="https://drscdn.500px.org/photo/1022741589/q%3D80_m%3D2000/v2?sig=b5ab12b405a872dc1b912fb6d0dede28050dbbd3302cfd92195f245ca813f26e"
+          alt="Ornans"
+        />
+        <img
+          class={currentIndex === 1 ? styles.active : styles.inactive}
+          src="https://drscdn.500px.org/photo/1019025604/q%3D80_m%3D2000/v2?sig=178bfbfb7ebfd5921fa6a7d6520c0aec6188620fa58469710b7505b6f4424247"
+          alt="Gerardmer"
+        />
+        <img
+          class={currentIndex === 1 ? styles.active : styles.inactive}
+          src="https://drscdn.500px.org/photo/1031139731/q%3D80_m%3D2000/v2?sig=140071ee907596808aa6e0e1770784a56bb3084b53983cf4ff991072732792b9"
+          alt="Blue horse"
+        />
+        <img
+          class={currentIndex === 1 ? styles.active : styles.inactive}
+          src="https://drscdn.500px.org/photo/1031139658/q%3D80_m%3D2000/v2?sig=d766424ee7bfbb85eb05743e111e76fcbbaf8be1f32a75eef864807d23f72c08"
+          alt="My brother's cat"
+        />
+      </div>
+    );
+
+    mutators.push((state) => (currentIndex = state.index));
+    console.log(currentIndex);
+    return slider;
+  };
+
+  console.log(state);
+
   return (
-    <div>
-      <PreviousButton />
-      <NextButton />
+    <div class="root">
+      <Slider />
+      <div class={styles.buttons}>
+        <PreviousButton />
+        <CurrentIndexIndicator />
+        <NextButton />
+      </div>
     </div>
   );
 }

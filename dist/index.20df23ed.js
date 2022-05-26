@@ -508,9 +508,11 @@ var _stylesModuleScss = require("./styles.module.scss");
 var _stylesModuleScssDefault = parcelHelpers.interopDefault(_stylesModuleScss);
 var _jsxToDom = require("./jsxToDom");
 /* @jsxRuntime classic @jsx jsxToDom */ function Slider(props = {}) {
+    document.body.className = (0, _stylesModuleScssDefault.default).root;
     //Set state object
     let state1 = {
-        index: 0
+        index: 0,
+        maxImagesSlider: 4
     };
     //when modify the DOM
     let mutators = [];
@@ -530,7 +532,7 @@ var _jsxToDom = require("./jsxToDom");
     let incrementIndex = ()=>{
         setState((state)=>({
                 ...state,
-                index: state.index + 1
+                index: state.maxImagesSlider <= state.index ? state.maxImagesSlider : state.index + 1
             }));
     };
     // Next button of the slider
@@ -539,12 +541,11 @@ var _jsxToDom = require("./jsxToDom");
             onClick: incrementIndex,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 39,
+                lineNumber: 44,
                 columnNumber: 18
             },
             __self: this
-        }, state1.index);
-        mutators.push((state)=>button.innerText = state.index);
+        }, "Next");
         return button;
     };
     // Previous button of the slider
@@ -553,41 +554,131 @@ var _jsxToDom = require("./jsxToDom");
             onClick: decrementIndex,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 48,
+                lineNumber: 50,
+                columnNumber: 26
+            },
+            __self: this
+        }, "Previous");
+        return previousButton;
+    };
+    let CurrentIndexIndicator = ()=>{
+        let currentIndexIindicator = /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("span", {
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 56,
                 columnNumber: 7
             },
             __self: this
-        }, state1.index);
-        mutators.push((state)=>previousButton.innerText = state.index);
-        return previousButton;
+        }, state1.index, " / ", state1.maxImagesSlider);
+        mutators.push((state)=>currentIndexIindicator.innerText = `${state.index} / ${state.maxImagesSlider}`);
+        return currentIndexIindicator;
     };
+    let Slider1 = ()=>{
+        let currentIndex = state1.index;
+        let slider = /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
+            class: `${(0, _stylesModuleScssDefault.default).slider}`,
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 71,
+                columnNumber: 7
+            },
+            __self: this
+        }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
+            class: currentIndex === 0 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            src: "https://drscdn.500px.org/photo/1022741589/q%3D80_m%3D2000/v2?sig=b5ab12b405a872dc1b912fb6d0dede28050dbbd3302cfd92195f245ca813f26e",
+            alt: "Ornans",
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 72,
+                columnNumber: 9
+            },
+            __self: this
+        }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
+            class: currentIndex === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            src: "https://drscdn.500px.org/photo/1019025604/q%3D80_m%3D2000/v2?sig=178bfbfb7ebfd5921fa6a7d6520c0aec6188620fa58469710b7505b6f4424247",
+            alt: "Gerardmer",
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 77,
+                columnNumber: 9
+            },
+            __self: this
+        }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
+            class: currentIndex === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            src: "https://drscdn.500px.org/photo/1031139731/q%3D80_m%3D2000/v2?sig=140071ee907596808aa6e0e1770784a56bb3084b53983cf4ff991072732792b9",
+            alt: "Blue horse",
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 82,
+                columnNumber: 9
+            },
+            __self: this
+        }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
+            class: currentIndex === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
+            src: "https://drscdn.500px.org/photo/1031139658/q%3D80_m%3D2000/v2?sig=d766424ee7bfbb85eb05743e111e76fcbbaf8be1f32a75eef864807d23f72c08",
+            alt: "My brother's cat",
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 87,
+                columnNumber: 9
+            },
+            __self: this
+        }));
+        mutators.push((state)=>currentIndex = state.index);
+        console.log(currentIndex);
+        return slider;
+    };
+    console.log(state1);
     return /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
+        class: "root",
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 55,
+            lineNumber: 103,
             columnNumber: 5
+        },
+        __self: this
+    }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider1, {
+        __source: {
+            fileName: "src/app.jsx",
+            lineNumber: 104,
+            columnNumber: 7
+        },
+        __self: this
+    }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
+        class: (0, _stylesModuleScssDefault.default).buttons,
+        __source: {
+            fileName: "src/app.jsx",
+            lineNumber: 105,
+            columnNumber: 7
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(PreviousButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 56,
-            columnNumber: 7
+            lineNumber: 106,
+            columnNumber: 9
+        },
+        __self: this
+    }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(CurrentIndexIndicator, {
+        __source: {
+            fileName: "src/app.jsx",
+            lineNumber: 107,
+            columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(NextButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 57,
-            columnNumber: 7
+            lineNumber: 108,
+            columnNumber: 9
         },
         __self: this
-    }));
+    })));
 }
 document.body.appendChild(/*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider, {
     __source: {
         fileName: "src/app.jsx",
-        lineNumber: 62,
+        lineNumber: 114,
         columnNumber: 27
     },
     __self: undefined
@@ -624,7 +715,11 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"ksQXS":[function(require,module,exports) {
-module.exports["app"] = `ZBpnFq_app`;
+module.exports["buttons"] = `ZBpnFq_buttons`;
+module.exports["inactive"] = `ZBpnFq_inactive`;
+module.exports["slider"] = `ZBpnFq_slider`;
+module.exports["root"] = `ZBpnFq_root`;
+module.exports["active"] = `ZBpnFq_active`;
 
 },{}],"hsFUi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
