@@ -511,7 +511,7 @@ var _jsxToDom = require("./jsxToDom");
     document.body.className = (0, _stylesModuleScssDefault.default).root;
     //Set state object
     let state1 = {
-        index: 0,
+        index: 1,
         maxImagesSlider: 4
     };
     //when modify the DOM
@@ -574,30 +574,36 @@ var _jsxToDom = require("./jsxToDom");
         return currentIndexIindicator;
     };
     let Slider1 = (index)=>{
-        let currentImage = state1.index;
-        // mutators.push((state) => (currentImage = state.index));
         let slider = /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
             class: `${(0, _stylesModuleScssDefault.default).slider}`,
+            "data-current-index": state1.index,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 72,
+                lineNumber: 69,
                 columnNumber: 7
             },
             __self: this
         }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: state1.index === 0 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1022741589/q%3D80_m%3D2000/v2?sig=b5ab12b405a872dc1b912fb6d0dede28050dbbd3302cfd92195f245ca813f26e",
             alt: "Ornans",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 73,
+                lineNumber: 70,
                 columnNumber: 9
             },
             __self: this
         }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: state1.index === 1 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1019025604/q%3D80_m%3D2000/v2?sig=178bfbfb7ebfd5921fa6a7d6520c0aec6188620fa58469710b7505b6f4424247",
             alt: "Gerardmer",
+            __source: {
+                fileName: "src/app.jsx",
+                lineNumber: 74,
+                columnNumber: 9
+            },
+            __self: this
+        }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
+            src: "https://drscdn.500px.org/photo/1031139731/q%3D80_m%3D2000/v2?sig=140071ee907596808aa6e0e1770784a56bb3084b53983cf4ff991072732792b9",
+            alt: "Blue horse",
             __source: {
                 fileName: "src/app.jsx",
                 lineNumber: 78,
@@ -605,40 +611,30 @@ var _jsxToDom = require("./jsxToDom");
             },
             __self: this
         }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: state1.index === 2 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
-            src: "https://drscdn.500px.org/photo/1031139731/q%3D80_m%3D2000/v2?sig=140071ee907596808aa6e0e1770784a56bb3084b53983cf4ff991072732792b9",
-            alt: "Blue horse",
-            __source: {
-                fileName: "src/app.jsx",
-                lineNumber: 83,
-                columnNumber: 9
-            },
-            __self: this
-        }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("img", {
-            class: state1.index === 3 ? (0, _stylesModuleScssDefault.default).active : (0, _stylesModuleScssDefault.default).inactive,
             src: "https://drscdn.500px.org/photo/1031139658/q%3D80_m%3D2000/v2?sig=d766424ee7bfbb85eb05743e111e76fcbbaf8be1f32a75eef864807d23f72c08",
             alt: "My brother's cat",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 88,
+                lineNumber: 82,
                 columnNumber: 9
             },
             __self: this
         }));
+        mutators.push((state)=>slider.attributes["data-current-index"].value = state.index);
         return slider;
     };
     return /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
         class: "root",
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 99,
+            lineNumber: 97,
             columnNumber: 5
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider1, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 100,
+            lineNumber: 98,
             columnNumber: 7
         },
         __self: this
@@ -646,28 +642,28 @@ var _jsxToDom = require("./jsxToDom");
         class: (0, _stylesModuleScssDefault.default).buttons,
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 101,
+            lineNumber: 99,
             columnNumber: 7
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(PreviousButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 102,
+            lineNumber: 100,
             columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(CurrentIndexIndicator, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 103,
+            lineNumber: 101,
             columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(NextButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 104,
+            lineNumber: 102,
             columnNumber: 9
         },
         __self: this
@@ -676,13 +672,39 @@ var _jsxToDom = require("./jsxToDom");
 document.body.appendChild(/*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider, {
     __source: {
         fileName: "src/app.jsx",
-        lineNumber: 109,
+        lineNumber: 107,
         columnNumber: 27
     },
     __self: undefined
 }));
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./styles.module.scss":"ksQXS","./jsxToDom":"hsFUi"}],"gkKU3":[function(require,module,exports) {
+},{"./styles.module.scss":"ksQXS","./jsxToDom":"hsFUi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ksQXS":[function(require,module,exports) {
+module.exports["buttons"] = `ZBpnFq_buttons`;
+module.exports["root"] = `ZBpnFq_root`;
+module.exports["slider"] = `ZBpnFq_slider`;
+
+},{}],"hsFUi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "jsxToDom", ()=>jsxToDom);
+function jsxToDom(element, props, ...children) {
+    //If I passed a component function
+    if (typeof element === "function") return element({
+        props,
+        ...children
+    });
+    //Create DOM element
+    let el = document.createElement(element);
+    if (props) for (let key of Object.keys(props)){
+        let eventName = key.match(/^on([A-Z]\w+)$/);
+        if (eventName) el.addEventListener(eventName[1].toLowerCase(), props[key]);
+        else el.setAttribute(key, props[key]);
+    }
+    for (let child of children)el.appendChild(child instanceof HTMLElement ? child : document.createTextNode(child));
+    return el;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -712,34 +734,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"ksQXS":[function(require,module,exports) {
-module.exports["inactive"] = `ZBpnFq_inactive`;
-module.exports["slider"] = `ZBpnFq_slider`;
-module.exports["buttons"] = `ZBpnFq_buttons`;
-module.exports["root"] = `ZBpnFq_root`;
-module.exports["active"] = `ZBpnFq_active`;
-
-},{}],"hsFUi":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "jsxToDom", ()=>jsxToDom);
-function jsxToDom(element, props, ...children) {
-    //If I passed a component function
-    if (typeof element === "function") return element({
-        props,
-        ...children
-    });
-    //Create DOM element
-    let el = document.createElement(element);
-    if (props) for (let key of Object.keys(props)){
-        let eventName = key.match(/^on([A-Z]\w+)$/);
-        if (eventName) el.addEventListener(eventName[1].toLowerCase(), props[key]);
-        else el.setAttribute(key, props[key]);
-    }
-    for (let child of children)el.appendChild(child instanceof HTMLElement ? child : document.createTextNode(child));
-    return el;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5m5ai","gpH1n"], "gpH1n", "parcelRequire5221")
+},{}]},["5m5ai","gpH1n"], "gpH1n", "parcelRequire5221")
 
 //# sourceMappingURL=index.20df23ed.js.map
