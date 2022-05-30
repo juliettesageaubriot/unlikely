@@ -5,6 +5,9 @@ yarn parcel src/index.html
 ```
 
 <ul>
+<li>Je me suis inspirée de :</li>
 <li>https://blog.arranfrance.com/post/replacing-vue-with-vanilla-js/</li>
 <li>https://bluepnume.medium.com/building-a-react-esque-component-using-vanilla-javascript-ddc99e76b867</li>
 </ul>
+
+<h2>https://unlikely-neon.vercel.app/</h2>
