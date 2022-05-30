@@ -9,7 +9,7 @@ function SliderComponent(props = {}) {
   //Set state object
   let state = {
     index: 1,
-    maxImagesSlider: 1,
+    maxImagesSlider: 4,
   };
 
   //when modify the DOM
