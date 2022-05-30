@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
-import { Mounted } from "./mount";
 import { jsxToDom } from "./jsxToDom";
+
 /* @jsxRuntime classic @jsx jsxToDom */
 
 function SliderComponent(props = {}) {
