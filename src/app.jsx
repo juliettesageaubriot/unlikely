@@ -1,11 +1,10 @@
 import styles from "./styles.module.scss";
+import { Mounted } from "./mount";
 import { jsxToDom } from "./jsxToDom";
 /* @jsxRuntime classic @jsx jsxToDom */
 
-function Slider(props = {}) {
+function SliderComponent(props = {}) {
   document.body.className = styles.root;
-
-  let slider;
 
   //Set state object
   let state = {
@@ -41,9 +40,9 @@ function Slider(props = {}) {
     }));
   };
 
-  let Mount = () => {
-    console.log("mount");
-  };
+  // let Mount = () => {
+  // console.log("mount");
+  // };
 
   // let UnMount = () => {
   //   console.log("unmount");
@@ -75,7 +74,7 @@ function Slider(props = {}) {
   };
 
   let Slider = () => {
-    slider = (
+    let slider = (
       <div class={`${styles.slider}`} data-current-index={state.index}>
         <img
           src="https://drscdn.500px.org/photo/1022741589/q%3D80_m%3D2000/v2?sig=b5ab12b405a872dc1b912fb6d0dede28050dbbd3302cfd92195f245ca813f26e"
@@ -104,15 +103,6 @@ function Slider(props = {}) {
     return slider;
   };
 
-  Mount(
-    console.log("mount")
-
-    // mutators.push(
-    //   (state) => (slider.attributes["data-current-index"].value = state.index),
-    //   (state) => (state.maxImagesSlider = slider.children.length)
-    // )
-  );
-
   return (
     <div class="root">
       <Slider />
@@ -124,4 +114,4 @@ function Slider(props = {}) {
     </div>
   );
 }
-document.body.appendChild(<Slider />);
+document.body.appendChild(<SliderComponent />);

@@ -537,7 +537,11 @@ var _jsxToDom = require("./jsxToDom");
             }));
     };
     let Mount = ()=>{
-        console.log("mount");
+    // console.log("mount", slider);
+    // mutators.push(
+    //   (state) => (slider.attributes["data-current-index"].value = state.index),
+    //   (state) => (state.maxImagesSlider = slider.children.length)
+    // )
     };
     // let UnMount = () => {
     //   console.log("unmount");
@@ -548,7 +552,7 @@ var _jsxToDom = require("./jsxToDom");
             onClick: incrementIndex,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 54,
+                lineNumber: 58,
                 columnNumber: 18
             },
             __self: this
@@ -561,7 +565,7 @@ var _jsxToDom = require("./jsxToDom");
             onClick: decrementIndex,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 60,
+                lineNumber: 64,
                 columnNumber: 26
             },
             __self: this
@@ -572,7 +576,7 @@ var _jsxToDom = require("./jsxToDom");
         let currentIndexIindicator = /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("span", {
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 66,
+                lineNumber: 70,
                 columnNumber: 7
             },
             __self: this
@@ -586,7 +590,7 @@ var _jsxToDom = require("./jsxToDom");
             "data-current-index": state1.index,
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 79,
+                lineNumber: 83,
                 columnNumber: 7
             },
             __self: this
@@ -595,7 +599,7 @@ var _jsxToDom = require("./jsxToDom");
             alt: "Ornans",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 80,
+                lineNumber: 84,
                 columnNumber: 9
             },
             __self: this
@@ -604,7 +608,7 @@ var _jsxToDom = require("./jsxToDom");
             alt: "Gerardmer",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 84,
+                lineNumber: 88,
                 columnNumber: 9
             },
             __self: this
@@ -613,7 +617,7 @@ var _jsxToDom = require("./jsxToDom");
             alt: "Blue horse",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 88,
+                lineNumber: 92,
                 columnNumber: 9
             },
             __self: this
@@ -622,7 +626,7 @@ var _jsxToDom = require("./jsxToDom");
             alt: "My brother's cat",
             __source: {
                 fileName: "src/app.jsx",
-                lineNumber: 92,
+                lineNumber: 96,
                 columnNumber: 9
             },
             __self: this
@@ -630,19 +634,19 @@ var _jsxToDom = require("./jsxToDom");
         mutators.push((state)=>slider.attributes["data-current-index"].value = state.index, (state)=>state.maxImagesSlider = slider.children.length);
         return slider;
     };
-    Mount(console.log("mount"));
+    Mount();
     return /*#__PURE__*/ (0, _jsxToDom.jsxToDom)("div", {
         class: "root",
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 117,
+            lineNumber: 114,
             columnNumber: 5
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider1, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 118,
+            lineNumber: 115,
             columnNumber: 7
         },
         __self: this
@@ -650,28 +654,28 @@ var _jsxToDom = require("./jsxToDom");
         class: (0, _stylesModuleScssDefault.default).buttons,
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 119,
+            lineNumber: 116,
             columnNumber: 7
         },
         __self: this
     }, /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(PreviousButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 120,
+            lineNumber: 117,
             columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(CurrentIndexIndicator, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 121,
+            lineNumber: 118,
             columnNumber: 9
         },
         __self: this
     }), /*#__PURE__*/ (0, _jsxToDom.jsxToDom)(NextButton, {
         __source: {
             fileName: "src/app.jsx",
-            lineNumber: 122,
+            lineNumber: 119,
             columnNumber: 9
         },
         __self: this
@@ -680,15 +684,15 @@ var _jsxToDom = require("./jsxToDom");
 document.body.appendChild(/*#__PURE__*/ (0, _jsxToDom.jsxToDom)(Slider, {
     __source: {
         fileName: "src/app.jsx",
-        lineNumber: 127,
+        lineNumber: 124,
         columnNumber: 27
     },
     __self: undefined
 }));
 
 },{"./styles.module.scss":"ksQXS","./jsxToDom":"hsFUi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ksQXS":[function(require,module,exports) {
-module.exports["slider"] = `ZBpnFq_slider`;
 module.exports["buttons"] = `ZBpnFq_buttons`;
+module.exports["slider"] = `ZBpnFq_slider`;
 module.exports["root"] = `ZBpnFq_root`;
 
 },{}],"hsFUi":[function(require,module,exports) {
