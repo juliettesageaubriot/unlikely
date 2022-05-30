@@ -5,10 +5,12 @@ import { jsxToDom } from "./jsxToDom";
 function Slider(props = {}) {
   document.body.className = styles.root;
 
+  let slider;
+
   //Set state object
   let state = {
     index: 1,
-    maxImagesSlider: 4,
+    maxImagesSlider: 1,
   };
 
   //when modify the DOM
@@ -24,7 +26,7 @@ function Slider(props = {}) {
   let decrementIndex = () => {
     setState((state) => ({
       ...state,
-      index: state.index === 0 ? 0 : state.index - 1,
+      index: state.index === 1 ? 1 : state.index - 1,
     }));
   };
 
@@ -38,6 +40,14 @@ function Slider(props = {}) {
           : state.index + 1,
     }));
   };
+
+  let Mount = () => {
+    console.log("mount");
+  };
+
+  // let UnMount = () => {
+  //   console.log("unmount");
+  // };
 
   // Next button of the slider
   let NextButton = () => {
@@ -64,8 +74,8 @@ function Slider(props = {}) {
     return currentIndexIindicator;
   };
 
-  let Slider = (index) => {
-    let slider = (
+  let Slider = () => {
+    slider = (
       <div class={`${styles.slider}`} data-current-index={state.index}>
         <img
           src="https://drscdn.500px.org/photo/1022741589/q%3D80_m%3D2000/v2?sig=b5ab12b405a872dc1b912fb6d0dede28050dbbd3302cfd92195f245ca813f26e"
@@ -87,11 +97,21 @@ function Slider(props = {}) {
     );
 
     mutators.push(
-      (state) => (slider.attributes["data-current-index"].value = state.index)
+      (state) => (slider.attributes["data-current-index"].value = state.index),
+      (state) => (state.maxImagesSlider = slider.children.length)
     );
 
     return slider;
   };
+
+  Mount(
+    console.log("mount")
+
+    // mutators.push(
+    //   (state) => (slider.attributes["data-current-index"].value = state.index),
+    //   (state) => (state.maxImagesSlider = slider.children.length)
+    // )
+  );
 
   return (
     <div class="root">

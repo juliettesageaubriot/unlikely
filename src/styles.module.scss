@@ -8,9 +8,9 @@
   .slider {
     @for $i from 1 through 4 {
       &[data-current-index="#{$i}"] {
-        background-color: red;
         :nth-child(#{$i}) {
           opacity: 1;
+          transition: 0.5s ease-in-out opacity;
         }
       }
     }
@@ -21,6 +21,7 @@
       transform: translate3d(-50%, -50%, 0);
       width: 100%;
       opacity: 0;
+      transition: 0.5s ease-in-out opacity;
     }
   }
 
